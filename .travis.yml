@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t allenwalker31/docker_learning:latest -f Dockerfile.dev .
+
+scripts:
+  - docker run allenwalker31/docker_learning:latest npm run test -- --coverage
